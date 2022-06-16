@@ -2,7 +2,8 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include "func/test/test.h"
+#include "func/test/test.hpp"
+#include "func/compile/compiler.hpp"
 
 int main() {
     //test_calc(1, 2);
@@ -24,9 +25,14 @@ int main() {
 
     file.close();
 
+    
+    //std::cout << lineTest;
+
     // write to file
     std::ofstream writeFile("output.js");
-
+    std::string lineTest = readLines(lines);
+    writeFile << lineTest;
+    writeFile.close();
 
     return 0;
 }
