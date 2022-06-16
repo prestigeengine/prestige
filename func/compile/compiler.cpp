@@ -25,7 +25,7 @@ std::string readLines(std::vector<std::string> lines) {
         std::vector<std::string> sep = split(line, ' ');
 
         if (line.rfind("log", 0) == 0) { //Print()
-            output += "console.log('" + line.substr(4) + "');\n";
+            output += "console.log(" + line.substr(4) + ");\n";
         } 
         
         else if (line.rfind("//", 0) == 0) { //Comment out

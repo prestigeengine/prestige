@@ -12,7 +12,6 @@ int main() {
     std::cout << "enter filename: ";
     std::getline(std::cin, input);
 
-
     //list of lines
     std::vector<std::string> lines;
 
@@ -24,9 +23,6 @@ int main() {
     };
 
     file.close();
-
-    
-    //std::cout << lineTest;
 
     // write to file
     std::ofstream writeFile("output.js");
