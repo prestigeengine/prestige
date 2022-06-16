@@ -47,7 +47,7 @@ std::string readLines(std::vector<std::string> lines) {
         }
         
         else if (line.rfind("end", 0) == 0) { //
-            output += "};\n";
+            output += "}\n";
         }
 
         else if (line.rfind("if", 0) == 0) { // If Statement
