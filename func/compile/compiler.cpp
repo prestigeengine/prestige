@@ -99,6 +99,14 @@ std::string readLines(std::vector<std::string> lines) {
         else if (line.rfind("type", 0) == 0) { // typeof
             output += "typeof " + line.substr(5) + "\n";
         }
+
+        else if (line.rfind("Str(", 0) == 0) { // switch Statement
+            output += "String(" + line.substr(5) + ")\n";
+        }
+
+        else if (line.rfind("Int(", 0) == 0) { // switch Statement
+            output += "Number(" + line.substr(5) + ")\n";
+        }
         //deez
     }
     return output;
