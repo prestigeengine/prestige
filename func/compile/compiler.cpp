@@ -126,7 +126,7 @@ std::string readLines(std::vector<std::string> lines) {
             output += "catch(" + line.substr(7) + ") {\n";
         }
 
-        else if (line.rfind("throwlog", 0) == 0) { // except Statement
+        else if (line.rfind("throwlog", 0) == 0) { // throws an error
             output += "throw " + line.substr(9) + "\n";
         }
         //deez
