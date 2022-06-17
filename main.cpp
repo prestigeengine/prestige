@@ -38,7 +38,7 @@ int main() {
 
     // write html with manifest
     std::ofstream htmlFile("output.html");
-    std::string = htmlLines = manifestGet(manifestLines);
+    std::string htmlLines = manifestGet(manifestLines);
     htmlFile << htmlLines; 
     htmlFile.close();
 

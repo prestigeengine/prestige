@@ -18,6 +18,7 @@ std::vector<std::string> split(std::string str, char delimiter) {
 }
 
 std::string readLines(std::vector<std::string> lines) {
+    std::string popBack = "";
     std::string output = "";
     // for line in lines
     for (std::string line : lines) {
@@ -38,20 +39,20 @@ std::string readLines(std::vector<std::string> lines) {
 
         else if (line.rfind("var", 0) == 0) { // VarDeclar!!
             // var name = "hello"
-            if (sep[2] == '=') {
+            if (sep[2] == "=") {
                 output += "let " + sep[1] + line.substr(4 + sep[1].size() + 1) + ";\n";
             }
         } 
         
         else if (line.rfind("let", 0) == 0) { // global var declar!!
             // var name "hello"
-            if (sep[2] == '=') {
+            if (sep[2] == "=") {
                 output += "var " + sep[1] + line.substr(4 + sep[1].size() + 1) + ";\n";
             }
         } 
 
         else if (line.rfind("const", 0) == 0) { // Constants Declaration
-            if (sep[2] == '=') {
+            if (sep[2] == "=") {
                 output += "const " + sep[1] + line.substr(6 + sep[1].size() + 1) + ";\n";
             }
         }
@@ -74,12 +75,12 @@ std::string readLines(std::vector<std::string> lines) {
 
         // def <name> [params]
         else if (line.rfind("def", 0) == 0) { // define function
-            output += "function " + sep[1] + "(" + line.substr(4 + sep[1].size()) + ") {\n"
+            output += "function " + sep[1] + "(" + line.substr(4 + sep[1].size()) + ") {\n";
         }
 
         // call <name> [params]
         else if (line.rfind("call", 0) == 0) { // call function
-            output += sep[1] + "(" + line.substr(5 + sep[1].size()) + ")"
+            output += sep[1] + "(" + line.substr(5 + sep[1].size()) + ");\n";
         }
 
         else if (line.rfind("while", 0) == 0) { // While Statement
@@ -110,12 +111,12 @@ std::string readLines(std::vector<std::string> lines) {
             output += "typeof " + line.substr(5) + "\n";
         }
 
-        else if (line.rfind("Str(", 0) == 0) { // tostring
-            output += line.substr(5).pop_back() + ".toString()\n";
+        else if (line.rfind("str", 0) == 0) {
+            output += line.substr(4) + ".toString()\n";
         }
 
-        else if (line.rfind("Int(", 0) == 0) { // int 
-            output += "parseInt(" + line.substr(5).pop_back() + ")\n";
+        else if (line.rfind("int", 0) == 0) { // int 
+            output += "parseInt(" + line.substr(4) + ");\n";
         }
 
         else if (line.rfind("try", 0) == 0) { // try
@@ -134,7 +135,7 @@ std::string readLines(std::vector<std::string> lines) {
         
 
         else {
-            output += line
+            output += line;
         }
         //deez
     }
