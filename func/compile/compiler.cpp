@@ -100,12 +100,12 @@ std::string readLines(std::vector<std::string> lines) {
             output += "typeof " + line.substr(5) + "\n";
         }
 
-        else if (line.rfind("Str(", 0) == 0) { // switch Statement
-            output += "String(" + line.substr(5) + ")\n";
+        else if (line.rfind("Str(", 0) == 0) { // tostring
+            output += line.substr(5).pop_back() + ".toString()\n";
         }
 
-        else if (line.rfind("Int(", 0) == 0) { // switch Statement
-            output += "Number(" + line.substr(5) + ")\n";
+        else if (line.rfind("Int(", 0) == 0) { // int 
+            output += "parseInt(" + line.substr(5).pop_back() + ")\n";
         }
         //deez
     }
