@@ -58,6 +58,20 @@ std::string readLines(std::vector<std::string> lines) {
             output += "else {\n";
         }
 
+        else if (line.rfind("else if", 0) == 0) { // else if statement
+            output += "else if (" + line.substr(8) + ") {\n";
+        }
+
+        // def <name> [params]
+        else if (line.rfind("def", 0) == 0) { // define function
+            output += "function " + sep[1] + "(" + line.substr(4 + sep[1].size()) + ") {\n"
+        }
+
+        // call <name> [params]
+        else if (line.rfind("call", 0) == 0) { // call function
+            output += sep[1] + "(" + line.substr(5 + sep[1].size()) + ")"
+        }
+
         else if (line.rfind("while", 0) == 0) { // While Statement
             output += "while (" + line.substr(6) + ") {\n";
         }
