@@ -83,6 +83,18 @@ std::string readLines(std::vector<std::string> lines) {
         else if (line.rfind("return", 0) == 0) { // Return Statement
             output += "return " + line.substr(7) + ";\n";
         }
+
+        else if (line.rfind("swt", 0) == 0) { // switch Statement
+            output += "switch(" + line.substr(4) + ") {\n";
+        }
+
+        else if (line.rfind("case", 0) == 0) { // switch Case
+            output += "case " + line.substr(5) + ":\n";
+        }
+
+        else if (line.rfind("break", 0) == 0) { // break
+            output += "break;\n";
+        }
         //deez
     }
     return output;
