@@ -107,6 +107,14 @@ std::string readLines(std::vector<std::string> lines) {
         else if (line.rfind("Int(", 0) == 0) { // int 
             output += "parseInt(" + line.substr(5).pop_back() + ")\n";
         }
+
+        else if (line.rfind("try", 0) == 0) { // try
+            output += "try {\n";
+        }
+
+        else if (line.rfind("except", 0) == 0) { // except Statement
+            output += "catch(" + line.substr(7) + ") {\n";
+        }
         //deez
     }
     return output;
