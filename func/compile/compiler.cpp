@@ -37,13 +37,17 @@ std::string readLines(std::vector<std::string> lines) {
         }
 
         else if (line.rfind("var", 0) == 0) { // VarDeclar!!
-            // var name "hello"
-            output += "let " + sep[1] + " = " + line.substr(4 + sep[1].size() + 1) + ";\n";
+            // var name = "hello"
+            if (sep[2] == '=') {
+                output += "let " + sep[1] + line.substr(4 + sep[1].size() + 1) + ";\n";
+            }
         } 
         
         else if (line.rfind("let", 0) == 0) { // global var declar!!
             // var name "hello"
-            output += "var " + sep[1] + " = " + line.substr(4 + sep[1].size() + 1) + ";\n";
+            if (sep[2] == '=') {
+                output += "var " + sep[1] + line.substr(4 + sep[1].size() + 1) + ";\n";
+            }
         } 
 
         else if (line.rfind("const", 0) == 0) { // Constants Declaration
