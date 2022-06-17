@@ -129,6 +129,13 @@ std::string readLines(std::vector<std::string> lines) {
         else if (line.rfind("throwlog", 0) == 0) { // throws an error
             output += "throw " + line.substr(9) + "\n";
         }
+
+
+        
+
+        else {
+            output += line
+        }
         //deez
     }
     return output;
