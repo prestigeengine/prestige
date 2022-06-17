@@ -115,6 +115,10 @@ std::string readLines(std::vector<std::string> lines) {
         else if (line.rfind("except", 0) == 0) { // except Statement
             output += "catch(" + line.substr(7) + ") {\n";
         }
+
+        else if (line.rfind("throwlog", 0) == 0) { // except Statement
+            output += "throw " + line.substr(9) + "\n";
+        }
         //deez
     }
     return output;
