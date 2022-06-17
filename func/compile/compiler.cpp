@@ -95,6 +95,10 @@ std::string readLines(std::vector<std::string> lines) {
         else if (line.rfind("break", 0) == 0) { // break
             output += "break;\n";
         }
+
+        else if (line.rfind("type", 0) == 0) { // typeof
+            output += "typeof " + line.substr(5) + "\n";
+        }
         //deez
     }
     return output;
