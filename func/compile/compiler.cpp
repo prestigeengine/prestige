@@ -51,7 +51,9 @@ std::string readLines(std::vector<std::string> lines) {
         } 
 
         else if (line.rfind("const", 0) == 0) { // Constants Declaration
-            output += "const " + sep[1] + " = " + line.substr(6 + sep[1].size() + 1) + ";\n";
+            if (sep[2] == '=') {
+                output += "const " + sep[1] + line.substr(6 + sep[1].size() + 1) + ";\n";
+            }
         }
         
         else if (line.rfind("end", 0) == 0) { // end
