@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <fstream>
 #include <sstream>
 
 std::vector<std::string> split(std::string str, char delimiter) {
@@ -15,4 +16,13 @@ std::vector<std::string> split(std::string str, char delimiter) {
   }
   
   return result;
+}
+
+void readIncl(std::string fileName, std::vector<std::string> *lines) {
+    std::string curLine;
+    std::ifstream inclFile(fileName);
+    while (std::getline(inclFile, curLine)) {
+        (*lines).push_back(curLine);
+    }
+    inclFile.close();
 }

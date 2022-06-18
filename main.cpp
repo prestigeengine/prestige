@@ -5,6 +5,7 @@
 #include "func/test/test.hpp"
 #include "func/compile/compiler.hpp"
 #include "func/manifest/manifest.hpp"
+#include "func/cat/cat.hpp"
 
 int main() {
     //test_calc(1, 2);
@@ -25,13 +26,24 @@ int main() {
     std::ifstream file(code);
     std::ifstream manifestfile(manifest);
     
+    // while (std::getline (file, currentLine)) {
+    //     lines.push_back(currentLine);
+    // };
+
     while (std::getline (file, currentLine)) {
-        lines.push_back(currentLine);
+        if (currentLine.rfind("import", 0) == 0) {
+            readIncl(currentLine.substr(7), &lines);
+        } else {
+            lines.push_back(currentLine);
+        }
+        
     };
 
     while (std::getline (manifestfile, currentLine)) {
         manifestLines.push_back(currentLine);
     }; 
+
+
 
    file.close();
    manifestfile.close();
