@@ -18,7 +18,7 @@ std::string manifestGet(std::vector<std::string> lines) {
         }
     }
 
-    output += "</script>";
+    output += "</script>\n<script src=\"output.js\"></script>";
 
     return output;
 }
