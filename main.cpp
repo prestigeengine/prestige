@@ -44,7 +44,7 @@ int main() {
 
     // write to file
     std::ofstream writeFile("output.js");
-    std::string lineTest = readLines(lines);
+    std::string lineTest = readLinesJS(lines);
     writeFile << lineTest;
     writeFile.close();
 

@@ -1,7 +1,7 @@
 #fullcompile on linux for linux
 fc-linux:
 	### compile compiler 
-	gcc -o compiler.out main.cpp func/test/* func/compile/* func/manifest/* func/cat/* -I. -lstdc++ 
+	gcc -o compiler.out main.cpp func/test/* func/compile/javascript/* func/compile/python/* func/manifest/* func/cat/* -I. -lstdc++ 
 	### run compiler
 	./compiler.out
 
