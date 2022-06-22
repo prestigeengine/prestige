@@ -5,11 +5,12 @@
 #include <string>
 #include <sstream>
 
-void ThrowError(line,Err) {
-    std::string ErrorArguments = "";
-    ErrorArguments += Err+"\n\n"+line;
+// move to cat
+void ThrowError(line,err) {
+    std::string errorArguments = "";
+    errorArguments += err+"\n\n"+line;
 
-    throw std::invalid_argument(ErrorArguments);
+    throw std::invalid_argument(errorArguments);
 }
 
 std::string readLinesJS(std::vector<std::string> lines) {
