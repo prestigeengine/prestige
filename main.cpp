@@ -7,16 +7,29 @@
 #include "func/manifest/manifest.hpp"
 #include "func/cat/cat.hpp"
 
-int main() {
-    //test_calc(1, 2);
+int main(int argc, char** argv) {
     std::string code; 
     std::string manifest;
-    std::string currentLine;
-    std::cout << "enter code filename: ";
-    std::getline(std::cin, code);
 
-    std::cout << "enter manifest filename: ";
-    std::getline(std::cin, manifest);
+    if ((argv.size() > 2) && argv[2]) {
+        code = argv[1];
+        manifest = argv[2]; 
+    };
+
+    //test_calc(1, 2);
+    
+    std::string currentLine;
+
+    if (!argv[1]) {
+        std::cout << "enter code filename: ";
+        std::getline(std::cin, code);
+    }
+
+    if (!argv[2]) {
+        std::cout << "enter manifest filename: ";
+        std::getline(std::cin, manifest);
+    }
+
 
     //list of lines
     std::vector<std::string> lines;
