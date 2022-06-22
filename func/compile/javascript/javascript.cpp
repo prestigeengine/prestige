@@ -5,6 +5,13 @@
 #include <string>
 #include <sstream>
 
+void ThrowError(line,Err) {
+    std::string ErrorArguments = "";
+    ErrorArguments += Err+"\n\n"+line;
+
+    throw std::invalid_argument(ErrorArguments);
+}
+
 std::string readLinesJS(std::vector<std::string> lines) {
     std::string popBack = "";
     std::string output = "";
@@ -13,8 +20,10 @@ std::string readLinesJS(std::vector<std::string> lines) {
         // sep = line.split(' ')
         std::vector<std::string> sep = split(line, ' ');
 
-        if (line.rfind("log", 0) == 0) { //Print()
-            output += "console.log(" + line.substr(4) + ");\n";
+        if (line.rfind("log(", 0) == 0) { //Print()
+            //Usage: log('Hello World')
+            std::string newLine = line.substr(-1);
+            output += "console.log(" + newLine.substr(4) + ");\n";
         } 
         
         else if (line.rfind("//", 0) == 0) { //Comment out
@@ -29,6 +38,8 @@ std::string readLinesJS(std::vector<std::string> lines) {
             // var name = "hello"
             if (sep[2] == "=") {
                 output += "let " + sep[1] + line.substr(4 + sep[1].size() + 1) + ";\n";
+            } else {
+                ThrowError(line, "Missing Assignment");
             }
         } 
         
@@ -36,12 +47,16 @@ std::string readLinesJS(std::vector<std::string> lines) {
             // var name "hello"
             if (sep[2] == "=") {
                 output += "var " + sep[1] + line.substr(4 + sep[1].size() + 1) + ";\n";
+            } else {
+                ThrowError(line, "Missing Assignment");
             }
         } 
 
         else if (line.rfind("const", 0) == 0) { // Constants Declaration
             if (sep[2] == "=") {
                 output += "const " + sep[1] + line.substr(6 + sep[1].size() + 1) + ";\n";
+            } else {
+                ThrowError(line, "Missing Assignment");
             }
         }
         
