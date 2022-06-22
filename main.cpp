@@ -58,8 +58,8 @@ int main(int argc, char** argv) {
 
 
 
-   file.close();
-   manifestfile.close();
+    file.close();
+    manifestfile.close();
 
     // write html with manifest
     std::ofstream htmlFile("output.html");
