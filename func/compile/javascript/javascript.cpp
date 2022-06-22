@@ -7,7 +7,7 @@
 
 void ThrowError(line,Err) {
     std::string ErrorArguments = "";
-    ErrorArguments += Err+"\n\n"+line
+    ErrorArguments += Err+"\n\n"+line;
 
     throw std::invalid_argument(ErrorArguments);
 }
