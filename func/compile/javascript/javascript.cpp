@@ -38,6 +38,8 @@ std::string readLinesJS(std::vector<std::string> lines) {
             // var name = "hello"
             if (sep[2] == "=") {
                 output += "let " + sep[1] + line.substr(4 + sep[1].size() + 1) + ";\n";
+            } else {
+                ThrowError(line, "Missing Assignment");
             }
         } 
         
@@ -45,12 +47,16 @@ std::string readLinesJS(std::vector<std::string> lines) {
             // var name "hello"
             if (sep[2] == "=") {
                 output += "var " + sep[1] + line.substr(4 + sep[1].size() + 1) + ";\n";
+            } else {
+                ThrowError(line, "Missing Assignment");
             }
         } 
 
         else if (line.rfind("const", 0) == 0) { // Constants Declaration
             if (sep[2] == "=") {
                 output += "const " + sep[1] + line.substr(6 + sep[1].size() + 1) + ";\n";
+            } else {
+                ThrowError(line, "Missing Assignment");
             }
         }
         
