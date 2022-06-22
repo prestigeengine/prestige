@@ -5,6 +5,13 @@
 #include <string>
 #include <sstream>
 
+void ThrowError(line,Err) {
+    std::string ErrorArguments = "";
+    ErrorArguments += Err+"\n\n"+line
+
+    throw std::invalid_argument(ErrorArguments);
+}
+
 std::string readLinesJS(std::vector<std::string> lines) {
     std::string popBack = "";
     std::string output = "";
