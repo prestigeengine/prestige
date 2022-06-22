@@ -13,8 +13,10 @@ std::string readLinesJS(std::vector<std::string> lines) {
         // sep = line.split(' ')
         std::vector<std::string> sep = split(line, ' ');
 
-        if (line.rfind("log", 0) == 0) { //Print()
-            output += "console.log(" + line.substr(4) + ");\n";
+        if (line.rfind("log(", 0) == 0) { //Print()
+            //Usage: log('Hello World')
+            std::string NewLine = line.substr(-1);
+            output += "console.log(" + NewLine.substr(4) + ");\n";
         } 
         
         else if (line.rfind("//", 0) == 0) { //Comment out
