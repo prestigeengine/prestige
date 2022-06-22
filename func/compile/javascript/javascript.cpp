@@ -22,8 +22,8 @@ std::string readLinesJS(std::vector<std::string> lines) {
 
         if (line.rfind("log(", 0) == 0) { //Print()
             //Usage: log('Hello World')
-            std::string NewLine = line.substr(-1);
-            output += "console.log(" + NewLine.substr(4) + ");\n";
+            std::string newLine = line.substr(-1);
+            output += "console.log(" + newLine.substr(4) + ");\n";
         } 
         
         else if (line.rfind("//", 0) == 0) { //Comment out
