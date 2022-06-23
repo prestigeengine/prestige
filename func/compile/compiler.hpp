@@ -6,6 +6,6 @@
 #define COMPILER_H
 
 std::string readLinesJS(std::vector<std::string> lines);
-void throwError(line,err);
+void throwError (std::string line, std::string err);
 
 #endif 

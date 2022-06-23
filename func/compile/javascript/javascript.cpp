@@ -6,11 +6,13 @@
 #include <sstream>
 
 // move to cat
-void throwError(line,err) {
+void throwError(std::string line, std::string err) {
     std::string errorArguments = "";
     errorArguments += err+"\n\n"+line;
 
-    throw std::invalid_argument(errorArguments);
+    std::cout << errorArguments;
+    exit(1);
+    return;
 }
 
 std::string readLinesJS(std::vector<std::string> lines) {
