@@ -11,21 +11,30 @@ int main(int argc, char** argv) {
     std::string code; 
     std::string manifest;
 
-    if ((argv.size() > 2) && argv[2]) {
+    if (argc >= 2) {
+        //std::cout << "triggered";
         code = argv[1];
-        manifest = argv[2]; 
     };
+
+    if (argc >= 3) {
+        manifest = argv[2]; 
+    }
+
+
 
     //test_calc(1, 2);
     
     std::string currentLine;
+    
+    std::cout << argc << '\n'; 
+    std::cout << code << '\n' << manifest << '\n';
 
-    if (!argv[1]) {
+    if (argc < 2) {
         std::cout << "enter code filename: ";
         std::getline(std::cin, code);
     }
 
-    if (!argv[2]) {
+    if (argc < 3) {
         std::cout << "enter manifest filename: ";
         std::getline(std::cin, manifest);
     }
