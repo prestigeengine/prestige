@@ -9,5 +9,6 @@
 
 std::vector<std::string> split(std::string str, char delimiter);
 void readIncl(std::string fileName, std::vector<std::string> *lines);
+void throwError (std::string line, std::string err);
 
 #endif 

@@ -26,3 +26,12 @@ void readIncl(std::string fileName, std::vector<std::string> *lines) {
     }
     inclFile.close();
 }
+
+void throwError(std::string line, std::string err) {
+    std::string errorArguments = "";
+    errorArguments += err+"\n\n"+line;
+
+    std::cout << errorArguments;
+    exit(1);
+    return;
+}

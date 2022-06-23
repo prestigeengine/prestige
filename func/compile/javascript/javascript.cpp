@@ -6,14 +6,6 @@
 #include <sstream>
 
 // move to cat
-void throwError(std::string line, std::string err) {
-    std::string errorArguments = "";
-    errorArguments += err+"\n\n"+line;
-
-    std::cout << errorArguments;
-    exit(1);
-    return;
-}
 
 std::string readLinesJS(std::vector<std::string> lines) {
     std::string popBack = "";
