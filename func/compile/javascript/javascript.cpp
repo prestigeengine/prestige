@@ -6,7 +6,7 @@
 #include <sstream>
 
 // move to cat
-void ThrowError(line,err) {
+void throwError(line,err) {
     std::string errorArguments = "";
     errorArguments += err+"\n\n"+line;
 
@@ -44,7 +44,7 @@ std::string readLinesJS(std::vector<std::string> lines) {
             if (sep[2] == "=") {
                 output += "let " + sep[1] + line.substr(4 + sep[1].size() + 1) + ";\n";
             } else {
-                ThrowError(line, "Missing Assignment");
+                throwError(line, "Missing Assignment");
             }
         } 
         
@@ -53,7 +53,7 @@ std::string readLinesJS(std::vector<std::string> lines) {
             if (sep[2] == "=") {
                 output += "var " + sep[1] + line.substr(4 + sep[1].size() + 1) + ";\n";
             } else {
-                ThrowError(line, "Missing Assignment");
+                throwError(line, "Missing Assignment");
             }
         } 
 
@@ -61,7 +61,7 @@ std::string readLinesJS(std::vector<std::string> lines) {
             if (sep[2] == "=") {
                 output += "const " + sep[1] + line.substr(6 + sep[1].size() + 1) + ";\n";
             } else {
-                ThrowError(line, "Missing Assignment");
+                throwError(line, "Missing Assignment");
             }
         }
         
