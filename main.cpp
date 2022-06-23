@@ -7,16 +7,38 @@
 #include "func/manifest/manifest.hpp"
 #include "func/cat/cat.hpp"
 
-int main() {
-    //test_calc(1, 2);
+int main(int argc, char** argv) {
     std::string code; 
     std::string manifest;
-    std::string currentLine;
-    std::cout << "enter code filename: ";
-    std::getline(std::cin, code);
 
-    std::cout << "enter manifest filename: ";
-    std::getline(std::cin, manifest);
+    if (argc >= 2) {
+        //std::cout << "triggered";
+        code = argv[1];
+    };
+
+    if (argc >= 3) {
+        manifest = argv[2]; 
+    }
+
+
+
+    //test_calc(1, 2);
+    
+    std::string currentLine;
+    
+    std::cout << argc << '\n'; 
+    std::cout << code << '\n' << manifest << '\n';
+
+    if (argc < 2) {
+        std::cout << "enter code filename: ";
+        std::getline(std::cin, code);
+    }
+
+    if (argc < 3) {
+        std::cout << "enter manifest filename: ";
+        std::getline(std::cin, manifest);
+    }
+
 
     //list of lines
     std::vector<std::string> lines;
@@ -45,8 +67,8 @@ int main() {
 
 
 
-   file.close();
-   manifestfile.close();
+    file.close();
+    manifestfile.close();
 
     // write html with manifest
     std::ofstream htmlFile("output.html");
