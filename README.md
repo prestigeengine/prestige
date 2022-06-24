@@ -15,11 +15,13 @@ Initially, clone the Prestige repository and change to the Prestige directory.
 git clone https://github.com/prestigeengine/prestige && cd prestige
 ```
 
-If you're using GCC and you're on UNIX, you can compile using `make fc-linux`, and the code will be compiled to `compiler.out`. 
+If you're using GCC and you're on UNIX, you can compile using `make fc-linux`, and the code will be compiled to `compiler.out` and will be ran. 
+
+If you simply want to compile, but not immediately run, use `make compile-only-linux`.
 
 Otherwise, simply use your own compiler to do this. 
 
-On Windows, with GCC: `gcc -o compiler.exe main.cpp func/test/* func/compile/javascript/* func/manifest/* func/cat/* -I. -lstdc++`
+On Windows, with GCC: `gcc -o compiler.exe main.cpp test/* compile/javascript/* manifest/* cat/* -I. -lstdc++`
 
 
 ## Usage
