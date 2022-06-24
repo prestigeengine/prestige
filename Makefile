@@ -9,3 +9,6 @@ fc-linux:
 fc-win:
 	### requires mingw-w64 
 	x86_64-w64-mingw32-g++ -o compiler.exe main.cpp func/test/* func/compile/javascript/* func/manifest/* func/cat/* -I. -lstdc++
+	
+compile-only-linux:
+	gcc -o compiler.out main.cpp func/test/* func/compile/javascript/* func/manifest/* func/cat/* -I. -lstdc++ 
