@@ -81,8 +81,7 @@ int main(int argc, char** argv) {
     std::string lineTest = readLinesJS(lines);
     writeFile << lineTest;
     writeFile.close();
-
+    
     std::cout << "compilation complete";
-
     return 0;
 }
