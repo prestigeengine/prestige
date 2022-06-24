@@ -2,10 +2,10 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include "func/test/test.hpp"
-#include "func/compile/compiler.hpp"
-#include "func/manifest/manifest.hpp"
-#include "func/cat/cat.hpp"
+#include "test/test.hpp"
+#include "compile/compiler.hpp"
+#include "manifest/manifest.hpp"
+#include "cat/cat.hpp"
 
 int main(int argc, char** argv) {
     std::string code; 
@@ -81,7 +81,7 @@ int main(int argc, char** argv) {
     std::string lineTest = readLinesJS(lines);
     writeFile << lineTest;
     writeFile.close();
-
-    std::cout << "compilation OK";
+    
+    std::cout << "compilation complete";
     return 0;
 }

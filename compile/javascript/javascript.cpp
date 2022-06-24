@@ -1,5 +1,5 @@
-#include "func/compile/compiler.hpp"
-#include "func/cat/cat.hpp"
+#include "compile/compiler.hpp"
+#include "cat/cat.hpp"
 #include <iostream>
 #include <vector>
 #include <string>
@@ -17,8 +17,8 @@ std::string readLinesJS(std::vector<std::string> lines) {
 
         if (line.rfind("log(", 0) == 0) { //Print()
             //Usage: log('Hello World')
-            std::string newLine = line.substr(-1);
-            output += "console.log(" + newLine.substr(4) + ");\n";
+            line.pop_back();
+            output += "console.log(" + line.substr(4) + ");\n";
         } 
         
         else if (line.rfind("log ", 0) == 0) {

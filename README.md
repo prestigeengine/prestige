@@ -21,7 +21,7 @@ If you simply want to compile, but not immediately run, use `make compile-only-l
 
 Otherwise, simply use your own compiler to do this. 
 
-On Windows, with GCC: `gcc -o compiler.exe main.cpp func/test/* func/compile/javascript/* func/manifest/* func/cat/* -I. -lstdc++`
+On Windows, with GCC: `gcc -o compiler.exe main.cpp test/* compile/javascript/* manifest/* cat/* -I. -lstdc++`
 
 
 ## Usage
