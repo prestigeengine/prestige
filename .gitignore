@@ -33,3 +33,5 @@
 *.pres
 *.js
 *.html
+
+build/
