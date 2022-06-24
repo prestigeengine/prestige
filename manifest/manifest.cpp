@@ -1,5 +1,5 @@
 #include "manifest.hpp"
-#include "func/cat/cat.hpp"
+#include "cat/cat.hpp"
 #include <iostream>
 #include <vector>
 #include <string>

@@ -1,5 +1,5 @@
-#include "func/compile/compiler.hpp"
-#include "func/cat/cat.hpp"
+#include "compile/compiler.hpp"
+#include "cat/cat.hpp"
 #include <iostream>
 #include <vector>
 #include <string>
