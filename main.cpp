@@ -26,8 +26,8 @@ int main(int argc, char** argv) {
     
     std::string currentLine;
     
-    std::cout << argc << '\n'; 
-    std::cout << code << '\n' << manifest << '\n';
+    //std::cout << argc << '\n'; 
+    //std::cout << code << '\n' << manifest << '\n';
 
     if (argc < 2) {
         std::cout << "enter code filename: ";
@@ -81,6 +81,8 @@ int main(int argc, char** argv) {
     std::string lineTest = readLinesJS(lines);
     writeFile << lineTest;
     writeFile.close();
+
+    std::cout << "compilation complete";
 
     return 0;
 }
